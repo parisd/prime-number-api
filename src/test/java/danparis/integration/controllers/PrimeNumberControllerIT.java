@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class HelloControllerIT {
+public class PrimeNumberControllerIT {
 
     @LocalServerPort
     private int port;
@@ -29,13 +29,14 @@ public class HelloControllerIT {
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
+        this.base = new URL("http://localhost:" + port + "/primes/");
     }
 
     @Test
-    public void getHello() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(),
+    public void getPrimes() throws Exception {
+        final Integer maxNum = 15;
+        ResponseEntity<String> response = template.getForEntity(base.toString() + maxNum,
                 String.class);
-        assertThat(response.getBody(), equalTo("Hello World!"));
+        assertThat(response.getBody(), equalTo(maxNum.toString()));
     }
 }
