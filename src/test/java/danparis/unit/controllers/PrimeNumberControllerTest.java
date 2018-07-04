@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import danparis.utils.TestData;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,13 +28,28 @@ public class PrimeNumberControllerTest {
     private MockHttpServletRequestBuilder mockHttpServletRequestBuilder;
 
     @Test
-    public void getPrimes() throws Exception {
-        performTest(15);
+    public void getPrimesUpto16() throws Exception {
+        performTest(16, TestData.PRIMES_UP_TO_16);
     }
 
-    private void performTest(final Integer maxNum) throws Exception {
+    @Test
+    public void getPrimesUpTo128() throws Exception {
+        performTest(128, TestData.PRIMES_UP_TO_128);
+    }
+
+    @Test
+    public void getPrimesUpTo256() throws Exception {
+        performTest(256, TestData.PRIMES_UP_TO_256);
+    }
+
+    @Test
+    public void getPrimesUpTo10000() throws Exception {
+        performTest(10000, TestData.PRIMES_UP_TO_10000);
+    }
+
+    private void performTest(final Integer maxNum, final String expectedResponseBody) throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/primes/" + maxNum).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo(maxNum.toString())));
+                .andExpect(content().string(equalTo(expectedResponseBody)));
     }
 }
