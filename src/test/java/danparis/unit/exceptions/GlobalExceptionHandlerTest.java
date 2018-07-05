@@ -16,23 +16,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class GlobalExceptionHandlerTest {
 
-        private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-        @Mock
-        PrimeNumberController primeNumberController;
+    @Mock
+    PrimeNumberController primeNumberController;
 
-        @Before
-        public void setUp() {
-            initMocks(this);
-            mockMvc = MockMvcBuilders.standaloneSetup(primeNumberController).setControllerAdvice(
-                    new GlobalExceptionHandler()).build();
-        }
+    @Before
+    public void setUp() {
+        initMocks(this);
+        mockMvc = MockMvcBuilders.standaloneSetup(primeNumberController).setControllerAdvice(
+                new GlobalExceptionHandler()).build();
+    }
 
-        @Test
-        public void testGlobalExceptionHandlerError() throws Exception {
-            when(primeNumberController.primesJson(500)).thenThrow(new BadRequestException(new Throwable("Bad Request")));
+    @Test
+    public void testGlobalExceptionHandlerError() throws Exception {
+        when(primeNumberController.primesJson(500)).thenThrow(new BadRequestException(new Throwable("Bad Request")));
 
-            mockMvc.perform(get("/primes/500")).andExpect(status().is(400)).andReturn();
-        }
-
+        mockMvc.perform(get("/primes/500")).andExpect(status().is(400)).andReturn();
+    }
 }

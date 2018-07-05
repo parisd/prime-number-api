@@ -8,6 +8,15 @@ import java.util.List;
 
 @Service
 public class PrimeNumberService {
+
+    // TODO: Add some sort of caching mecahism based on supplied input number.
+    // Maybe some extra logic with size of return list?
+
+
+    // TODO: Investigate algorithm improvements.
+    // Find current max limit and force min JVM settings to allow known behaviour.
+    // Recursive algorithms?
+    // Splitting the list and running concurrent threads?
     /**
      * A function to return all the prime numbers up to and including the provided number.
      *

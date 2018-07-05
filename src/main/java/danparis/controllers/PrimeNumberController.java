@@ -19,6 +19,8 @@ import java.util.List;
 @RestController
 public class PrimeNumberController {
 
+    // TODO: Consider adding optional @RequestParam fields to do algorithm toggling.
+
     @Autowired
     private PrimeNumberService primeNumberService;
 
@@ -55,4 +57,11 @@ public class PrimeNumberController {
         }
         return new ResponseEntity<>(xmlString, HttpStatus.OK);
     }
+
+    // TODO: Implement a function to do some validation (and any other required actions) on the input.
+    /*
+    private void doStuffWithInput() {
+
+    }
+    */
 }
