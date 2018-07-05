@@ -6,8 +6,6 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 public class PrimeNumberControllerXmlIT extends PrimeNumberControllerBaseIT {
 
     @BeforeClass

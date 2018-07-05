@@ -9,8 +9,6 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.net.ssl.HttpsURLConnection;
-
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
