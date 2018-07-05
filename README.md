@@ -1,4 +1,5 @@
-#Project Summary
+# Project Summary
+
 This project is a REST API that exposes a rest end point on port 8080 that expects a single integer argument. The call will calculate and return a list of prime numbers up to and including the supplied number. Minimal validation is performed on the supplied input.
 
 The API can return the information as either XML or JSON, depending on the "Accept" header of the message.
@@ -6,10 +7,13 @@ The API can return the information as either XML or JSON, depending on the "Acce
 * If "application/json" is supplied, JSON data will be returned.
 * If "application/xml" is supplied, XML data will be returned.
 
-#Example Calls
+# Building The Project
+The project is build using maven. All tests will be run as part of the maven ```mvn clean install``` lifecycle (reports can be found in the target directory). This will generate an executable jar in the target directory and in your user;s .m2.
+
+# Example Calls
 Below is an example call for both JSON and XML:
 
-##No Accept Header
+## No Accept Header
 ```
 Request: http://localhost:8080/primes/16
 Headers: "Accept: application/json"
@@ -17,7 +21,7 @@ Headers: "Accept: application/json"
 Response:{"initial":16,"primes":[2,3,5,7,11,13]}
 ```
 
-##JSON Accept Header
+## JSON Accept Header
 ```
 Request: http://localhost:8080/primes/16
 Headers: "Accept: application/json"
@@ -25,7 +29,7 @@ Headers: "Accept: application/json"
 Response:{"initial":16,"primes":[2,3,5,7,11,13]}
 ```
 
-##XML Accept Header
+## XML Accept Header
 ```
 Request: http://localhost:8080/primes/16
 Headers: "Accept: application/xml"

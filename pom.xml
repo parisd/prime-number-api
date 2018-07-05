@@ -51,6 +51,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!--See https://maven.apache.org/surefire/maven-failsafe-plugin/ for why we should use both failsure and surefire plugins.-->
             <plugin>
                 <!--Follows standard failsafe include/exclude conventions
                 https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html -->
