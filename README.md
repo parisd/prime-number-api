@@ -8,7 +8,11 @@ The API can return the information as either XML or JSON, depending on the "Acce
 * If "application/xml" is supplied, XML data will be returned.
 
 # Building The Project
-The project is build using maven. All tests will be run as part of the maven ```mvn clean install``` lifecycle (reports can be found in the target directory). This will generate an executable jar in the target directory and in your user;s .m2.
+The project is build using maven. All tests will be run as part of the maven ```mvn clean install``` lifecycle (reports can be found in the target directory). This will generate an executable jar in the target directory and in your user's .m2.
+The aforementioned jar can be run with the following command:
+```
+java -jar <pathToJar>
+```
 
 # Example Calls
 Below is an example call for no Accept header, as well as "application/json" and "application/xml" Accept headers.
