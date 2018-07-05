@@ -19,15 +19,14 @@ Below is an example call for no Accept header, as well as "application/json" and
 
 ## No Accept Header
 ```
-Request: http://localhost:8080/primes/16
-Headers: "Accept: application/json"
+Request URI: http://localhost:8080/primes/16
 
 Response:{"initial":16,"primes":[2,3,5,7,11,13]}
 ```
 
 ## JSON Accept Header
 ```
-Request: http://localhost:8080/primes/16
+Request URI: http://localhost:8080/primes/16
 Headers: "Accept: application/json"
 
 Response:{"initial":16,"primes":[2,3,5,7,11,13]}
@@ -35,7 +34,7 @@ Response:{"initial":16,"primes":[2,3,5,7,11,13]}
 
 ## XML Accept Header
 ```
-Request: http://localhost:8080/primes/16
+Request URI: http://localhost:8080/primes/16
 Headers: "Accept: application/xml"
 
 Response: <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
